@@ -2,6 +2,7 @@
 
 # Question 1.1
 
+assert df.shape == (550, 14), "Shape of loaded DataFrame is incorrect."
 assert df.index.name == 'RespondentID', "Index is not RespondentID"
 
 # Question 1.2
@@ -76,7 +77,7 @@ assert np.array_equal(n2, [[0, 1, 2],[3, 4, 5]]), "Incorrect neighbourhood - che
 n3 = extract(X, 1, 0, s=1)
 assert np.array_equal(n3, [[2, 0, 1],[5, 3, 4],[8, 6, 7]]), "Incorrect neighbourhood - check left-right wrap"
 
-# Question 2.4 - check visually against example
+# Question 2.4 - check visually against glider example
 
 X = np.array([[0, 0, 0, 0], [1, 0, 0, 0], [0, 1, 1, 0], [1, 1, 0, 0], [0, 0, 0, 0]])
 
@@ -103,11 +104,11 @@ assert all(coarser_df.reset_index()['DATE'].diff()[1:] == np.timedelta64(7, 'D')
 
 # Question 3.4
 
-assert np.around(adjusted_df.min().min(), 3) == 1.00, "Minimum value in any array is not 1."
+assert np.around(adjusted_df.min().min(), 3) == 1.00, "Minimum value across all arrays is not 1."
 
 # Question 3.5
 
-assert smooth_df.iloc[-2] == 2.469826635724209, "Wrong smoothed value"
+assert smooth_df.iloc[-2] == 2.469826635724209, "Wrong smoothed value, should be 2.469826635724209"
 
 # Question 3.6
 
