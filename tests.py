@@ -17,7 +17,7 @@ assert sum(cutoff_df.isnull().sum(axis=1) > 5) == 0, "Relevant NaNs not removed"
 
 # Question 1.4
 
-assert len(select_rows_with_missing(df).index) == 219, 'Not all missing value rows extracted'.
+assert len(select_rows_with_missing(df).index) == 219, 'Not all missing value rows extracted'
 
 # Question 1.5
 
