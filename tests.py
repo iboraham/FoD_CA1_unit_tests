@@ -14,7 +14,6 @@ assert patched_df.loc[patched_df['Do you eat steak?'] == 'No', 'How do you like 
 cutoff_df = remove_rows_with_excess_of_missing(df, 5)
 assert sum(cutoff_df.isnull().sum(axis=1) > 5) == 0, "Relevant NaNs not removed"
 
-
 # Question 1.4
 
 assert len(select_rows_with_missing(df).index) == 219, 'Not all missing value rows extracted'.
@@ -81,7 +80,10 @@ assert np.array_equal(n3, [[2, 0, 1],[5, 3, 4],[8, 6, 7]]), "Incorrect neighbour
 
 X = np.array([[0, 0, 0, 0], [1, 0, 0, 0], [0, 1, 1, 0], [1, 1, 0, 0], [0, 0, 0, 0]])
 
-# Question 2.5 - check visually
+# Question 2.5 - check visually against q2-5.png
+
+X_test = np.array([[0, 0, 1, 1, 0],[0, 0, 0, 0, 0],[0, 1, 1, 1, 0],[0, 0, 0, 1, 1],[0, 0, 0, 0, 0]])
+X=conway_game(X_test, 15)
 
 ### PART 3
 
