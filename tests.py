@@ -72,10 +72,8 @@ assert test_grid[9, 9] == 0
 X = np.arange(18).reshape(6, 3)
 n1 = extract(X, 1, 1, s=1)
 assert np.array_equal(n1, [[0, 1, 2],[3, 4, 5],[6, 7, 8]]), "Incorrect neighbourhood"
-n2 = extract(X, 0, 1, s=1)
-assert np.array_equal(n2, [[0, 1, 2],[3, 4, 5]]), "Incorrect neighbourhood - check top-bottom boundary"
-n3 = extract(X, 1, 0, s=1)
-assert np.array_equal(n3, [[2, 0, 1],[5, 3, 4],[8, 6, 7]]), "Incorrect neighbourhood - check left-right wrap"
+n2 = extract(X, 1, 0, s=1)
+assert np.array_equal(n2, [[2, 0, 1],[5, 3, 4],[8, 6, 7]]), "Incorrect neighbourhood - check left-right wrap"
 
 # Question 2.4 - check visually against glider example
 
